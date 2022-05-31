@@ -1,0 +1,21 @@
+{
+  "name": "nuevoproyecto",
+  "version": "1.0.0",
+  "description": "Proyecto para aprender cypress yey!",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "cy:run": "npx cypress run -s cypress/integration/*/*.spec.js"
+  },
+  "keywords": [
+    "cypress",
+    "testing",
+    "automation"
+  ],
+  "author": "Agus",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^9.6.1",
+    "mochawesome": "^7.1.3"
+  }
+}

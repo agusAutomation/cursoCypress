@@ -1,0 +1,10 @@
+{
+    "reporter": "mochawesome",
+    "video": false,
+    "reporterOptions": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+    }
+}
