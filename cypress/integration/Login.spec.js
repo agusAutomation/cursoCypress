@@ -28,6 +28,8 @@ describe('Ejemplo test basico', () => {
         //Use My Account Page
         myAccount.getTitle().should('contain.text','My Account');
         myAccount.getManageAccountBtn().click();
+
+        login.getErrorMsg().should('not.exist');
     });
 
 })
