@@ -3,13 +3,15 @@ import Login from '../pages/login';
 import MyAccount from '../pages/myAccount';
 import Data from '../fixtures/usuarios.json';
 
+const url = Cypress.env('baseUrl');
+
 describe('Ejemplo test basico', () => {
 
     before(() => {
-        cy.visit('https://automationteststore.com/');
+        cy.visit(url);
     });
 
-    it('Mi primer test, hacer click en login', () => {
+    it('Mi primer test, hacer click en login', { tags: '@onDevelopment' } , () => {
         const header = new Header();
         const login = new Login();
         const myAccount = new MyAccount();
