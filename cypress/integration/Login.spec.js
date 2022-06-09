@@ -34,4 +34,9 @@ describe('Ejemplo test basico', () => {
         login.getErrorMsg().should('not.exist');
     });
 
+    it.only('Testear servicio', { tags: '@onDevelopment' } , () => {
+        
+        cy.callService('catalogManagement/suggestions/suggestionsByTerm?searchTerm=samsung','buscador');
+    });
+
 })

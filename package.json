@@ -17,6 +17,7 @@
   "author": "Agus",
   "license": "ISC",
   "dependencies": {
+    "ajv": "^6.12.6",
     "cypress": "^9.6.1",
     "cypress-grep": "^1.0.0",
     "mochawesome": "^7.1.3"

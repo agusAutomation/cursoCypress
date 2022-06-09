@@ -1,0 +1,345 @@
+{
+    "type": "object",
+    "required": [
+        "keywords",
+        "products",
+        "brands",
+        "categories"
+    ],
+    "properties": {
+        "keywords": {
+            "type": "object",
+            "required": [
+                "FeatureEnabled",
+                "suggestionView"
+            ],
+            "properties": {
+                "FeatureEnabled": {
+                    "type": "boolean"
+                },
+                "suggestionView": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "identifier",
+                            "entry"
+                        ],
+                        "properties": {
+                            "identifier": {
+                                "type": "string"
+                            },
+                            "entry": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "term",
+                                        "frequency"
+                                    ],
+                                    "properties": {
+                                        "term": {
+                                            "type": "string"
+                                        },
+                                        "frequency": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "uniqueItems": false
+                            }
+                        }
+                    },
+                    "uniqueItems": false
+                }
+            }
+        },
+        "products": {
+            "type": "object",
+            "required": [
+                "FeatureEnabled",
+                "suggestionView",
+                "recordSetCount",
+                "metaData",
+                "resourceId",
+                "recordSetStartNumber",
+                "resourceName",
+                "recordSetTotal",
+                "recordSetTotalMatches",
+                "recordSetComplete"
+            ],
+            "properties": {
+                "FeatureEnabled": {
+                    "type": "boolean"
+                },
+                "suggestionView": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "identifier",
+                            "entry"
+                        ],
+                        "properties": {
+                            "identifier": {
+                                "type": "string"
+                            },
+                            "entry": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "hasSingleSKU",
+                                        "resourceId",
+                                        "uniqueID",
+                                        "partNumber",
+                                        "catalogEntryTypeCode",
+                                        "thumbnail",
+                                        "storeID",
+                                        "name",
+                                        "price",
+                                        "friendlyUrl",
+                                        "fromCache",
+                                        "manufacturer",
+                                        "color",
+                                        "productType"
+                                    ],
+                                    "properties": {
+                                        "hasSingleSKU": {
+                                            "type": "boolean"
+                                        },
+                                        "resourceId": {
+                                            "type": "string"
+                                        },
+                                        "uniqueID": {
+                                            "type": "string"
+                                        },
+                                        "partNumber": {
+                                            "type": "string"
+                                        },
+                                        "catalogEntryTypeCode": {
+                                            "type": "string"
+                                        },
+                                        "thumbnail": {
+                                            "type": "string"
+                                        },
+                                        "storeID": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "price": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "required": [
+                                                    "usage",
+                                                    "description",
+                                                    "currency",
+                                                    "value"
+                                                ],
+                                                "properties": {
+                                                    "usage": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "currency": {
+                                                        "type": "string"
+                                                    },
+                                                    "value": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "uniqueItems": false
+                                        },
+                                        "friendlyUrl": {
+                                            "type": "string"
+                                        },
+                                        "fromCache": {
+                                            "type": "boolean"
+                                        },
+                                        "manufacturer": {
+                                            "type": "string"
+                                        },
+                                        "color": {
+                                            "type": "integer"
+                                        },
+                                        "productType": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "uniqueItems": false
+                            }
+                        }
+                    },
+                    "uniqueItems": false
+                },
+                "recordSetCount": {
+                    "type": "integer"
+                },
+                "metaData": {
+                    "type": "object",
+                    "required": [
+                        "price"
+                    ],
+                    "properties": {
+                        "price": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "resourceId": {
+                    "type": "string"
+                },
+                "recordSetStartNumber": {
+                    "type": "integer"
+                },
+                "resourceName": {
+                    "type": "string"
+                },
+                "recordSetTotal": {
+                    "type": "integer"
+                },
+                "recordSetTotalMatches": {
+                    "type": "integer"
+                },
+                "recordSetComplete": {
+                    "type": "string"
+                }
+            }
+        },
+        "brands": {
+            "type": "object",
+            "required": [
+                "FeatureEnabled",
+                "DocumentList",
+                "suggestionView"
+            ],
+            "properties": {
+                "FeatureEnabled": {
+                    "type": "boolean"
+                },
+                "DocumentList": {
+                    "type": "array",
+                    "items": {},
+                    "uniqueItems": false
+                },
+                "suggestionView": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "value",
+                            "entry",
+                            "name",
+                            "identifier"
+                        ],
+                        "properties": {
+                            "value": {
+                                "type": "string"
+                            },
+                            "entry": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "name",
+                                        "value",
+                                        "count"
+                                    ],
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        },
+                                        "count": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "uniqueItems": false
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "uniqueItems": false
+                }
+            }
+        },
+        "categories": {
+            "type": "object",
+            "required": [
+                "FeatureEnabled",
+                "suggestionView"
+            ],
+            "properties": {
+                "FeatureEnabled": {
+                    "type": "boolean"
+                },
+                "suggestionView": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "entry",
+                            "categorySeparator",
+                            "identifier"
+                        ],
+                        "properties": {
+                            "entry": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "value",
+                                        "fullPath",
+                                        "fullPathCategoryIds",
+                                        "name",
+                                        "shortDescription"
+                                    ],
+                                    "properties": {
+                                        "value": {
+                                            "type": "string"
+                                        },
+                                        "fullPath": {
+                                            "type": "string"
+                                        },
+                                        "fullPathCategoryIds": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "shortDescription": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "uniqueItems": false
+                            },
+                            "categorySeparator": {
+                                "type": "string"
+                            },
+                            "identifier": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "uniqueItems": false
+                }
+            }
+        }
+    }
+}
