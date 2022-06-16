@@ -1,7 +1,7 @@
-import Header from '../pages/header';
-import Login from '../pages/login';
-import MyAccount from '../pages/myAccount';
-import Data from '../fixtures/usuarios.json';
+import Header from '../../pages/header';
+import Login from '../../pages/login';
+import MyAccount from '../../pages/myAccount';
+import Data from '../../fixtures/usuarios.json';
 
 const url = Cypress.env('baseUrl');
 
@@ -31,12 +31,8 @@ describe('Ejemplo test basico', () => {
         myAccount.getTitle().should('contain.text','My Account');
         myAccount.getManageAccountBtn().click();
 
-        login.getErrorMsg().should('not.exist');
-    });
-
-    it.only('Testear servicio', { tags: '@onDevelopment' } , () => {
-        
-        cy.callService('catalogManagement/suggestions/suggestionsByTerm?searchTerm=samsung','buscador');
+        //login.getErrorMsg().should('not.exist');
+        login.getErrorMsg().should('be.visible');
     });
 
 })
