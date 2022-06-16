@@ -1,10 +1,9 @@
 {
-    "reporter": "mochawesome",
-    "video": false,
-    "reporterOptions": {
+    "reporter": "cypress-mochawesome-reporter",
+    "reporterOptions":{
         "reportDir": "cypress/results",
-        "overwrite": false,
-        "html": false,
-        "json": true
-    }
+        "charts": true,
+        "embeddedScreenshots": true
+    },
+    "video": false
 }

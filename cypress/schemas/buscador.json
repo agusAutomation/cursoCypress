@@ -1,345 +1,168 @@
 {
-    "type": "object",
-    "required": [
-        "keywords",
-        "products",
-        "brands",
-        "categories"
-    ],
-    "properties": {
-        "keywords": {
-            "type": "object",
-            "required": [
-                "FeatureEnabled",
-                "suggestionView"
-            ],
-            "properties": {
-                "FeatureEnabled": {
-                    "type": "boolean"
-                },
-                "suggestionView": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "required": [
-                            "identifier",
-                            "entry"
-                        ],
-                        "properties": {
-                            "identifier": {
-                                "type": "string"
-                            },
-                            "entry": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "required": [
-                                        "term",
-                                        "frequency"
-                                    ],
-                                    "properties": {
-                                        "term": {
-                                            "type": "string"
-                                        },
-                                        "frequency": {
-                                            "type": "integer"
-                                        }
-                                    }
-                                },
-                                "uniqueItems": false
-                            }
-                        }
-                    },
-                    "uniqueItems": false
-                }
-            }
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://json-schema.org/draft-07/schema#",
+    "title": "Core schema meta-schema",
+    "definitions": {
+        "schemaArray": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#" }
         },
-        "products": {
-            "type": "object",
-            "required": [
-                "FeatureEnabled",
-                "suggestionView",
-                "recordSetCount",
-                "metaData",
-                "resourceId",
-                "recordSetStartNumber",
-                "resourceName",
-                "recordSetTotal",
-                "recordSetTotalMatches",
-                "recordSetComplete"
-            ],
-            "properties": {
-                "FeatureEnabled": {
-                    "type": "boolean"
-                },
-                "suggestionView": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "required": [
-                            "identifier",
-                            "entry"
-                        ],
-                        "properties": {
-                            "identifier": {
-                                "type": "string"
-                            },
-                            "entry": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "required": [
-                                        "hasSingleSKU",
-                                        "resourceId",
-                                        "uniqueID",
-                                        "partNumber",
-                                        "catalogEntryTypeCode",
-                                        "thumbnail",
-                                        "storeID",
-                                        "name",
-                                        "price",
-                                        "friendlyUrl",
-                                        "fromCache",
-                                        "manufacturer",
-                                        "color",
-                                        "productType"
-                                    ],
-                                    "properties": {
-                                        "hasSingleSKU": {
-                                            "type": "boolean"
-                                        },
-                                        "resourceId": {
-                                            "type": "string"
-                                        },
-                                        "uniqueID": {
-                                            "type": "string"
-                                        },
-                                        "partNumber": {
-                                            "type": "string"
-                                        },
-                                        "catalogEntryTypeCode": {
-                                            "type": "string"
-                                        },
-                                        "thumbnail": {
-                                            "type": "string"
-                                        },
-                                        "storeID": {
-                                            "type": "string"
-                                        },
-                                        "name": {
-                                            "type": "string"
-                                        },
-                                        "price": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "required": [
-                                                    "usage",
-                                                    "description",
-                                                    "currency",
-                                                    "value"
-                                                ],
-                                                "properties": {
-                                                    "usage": {
-                                                        "type": "string"
-                                                    },
-                                                    "description": {
-                                                        "type": "string"
-                                                    },
-                                                    "currency": {
-                                                        "type": "string"
-                                                    },
-                                                    "value": {
-                                                        "type": "string"
-                                                    }
-                                                }
-                                            },
-                                            "uniqueItems": false
-                                        },
-                                        "friendlyUrl": {
-                                            "type": "string"
-                                        },
-                                        "fromCache": {
-                                            "type": "boolean"
-                                        },
-                                        "manufacturer": {
-                                            "type": "string"
-                                        },
-                                        "color": {
-                                            "type": "integer"
-                                        },
-                                        "productType": {
-                                            "type": "string"
-                                        }
-                                    }
-                                },
-                                "uniqueItems": false
-                            }
-                        }
-                    },
-                    "uniqueItems": false
-                },
-                "recordSetCount": {
-                    "type": "integer"
-                },
-                "metaData": {
-                    "type": "object",
-                    "required": [
-                        "price"
-                    ],
-                    "properties": {
-                        "price": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "resourceId": {
-                    "type": "string"
-                },
-                "recordSetStartNumber": {
-                    "type": "integer"
-                },
-                "resourceName": {
-                    "type": "string"
-                },
-                "recordSetTotal": {
-                    "type": "integer"
-                },
-                "recordSetTotalMatches": {
-                    "type": "integer"
-                },
-                "recordSetComplete": {
-                    "type": "string"
-                }
-            }
+        "nonNegativeInteger": {
+            "type": "integer",
+            "minimum": 0
         },
-        "brands": {
-            "type": "object",
-            "required": [
-                "FeatureEnabled",
-                "DocumentList",
-                "suggestionView"
-            ],
-            "properties": {
-                "FeatureEnabled": {
-                    "type": "boolean"
-                },
-                "DocumentList": {
-                    "type": "array",
-                    "items": {},
-                    "uniqueItems": false
-                },
-                "suggestionView": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "required": [
-                            "value",
-                            "entry",
-                            "name",
-                            "identifier"
-                        ],
-                        "properties": {
-                            "value": {
-                                "type": "string"
-                            },
-                            "entry": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "required": [
-                                        "name",
-                                        "value",
-                                        "count"
-                                    ],
-                                    "properties": {
-                                        "name": {
-                                            "type": "string"
-                                        },
-                                        "value": {
-                                            "type": "string"
-                                        },
-                                        "count": {
-                                            "type": "string"
-                                        }
-                                    }
-                                },
-                                "uniqueItems": false
-                            },
-                            "name": {
-                                "type": "string"
-                            },
-                            "identifier": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "uniqueItems": false
-                }
-            }
+        "nonNegativeIntegerDefault0": {
+            "allOf": [
+                { "$ref": "#/definitions/nonNegativeInteger" },
+                { "default": 0 }
+            ]
         },
-        "categories": {
-            "type": "object",
-            "required": [
-                "FeatureEnabled",
-                "suggestionView"
-            ],
-            "properties": {
-                "FeatureEnabled": {
-                    "type": "boolean"
-                },
-                "suggestionView": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "required": [
-                            "entry",
-                            "categorySeparator",
-                            "identifier"
-                        ],
-                        "properties": {
-                            "entry": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "required": [
-                                        "value",
-                                        "fullPath",
-                                        "fullPathCategoryIds",
-                                        "name",
-                                        "shortDescription"
-                                    ],
-                                    "properties": {
-                                        "value": {
-                                            "type": "string"
-                                        },
-                                        "fullPath": {
-                                            "type": "string"
-                                        },
-                                        "fullPathCategoryIds": {
-                                            "type": "string"
-                                        },
-                                        "name": {
-                                            "type": "string"
-                                        },
-                                        "shortDescription": {
-                                            "type": "string"
-                                        }
-                                    }
-                                },
-                                "uniqueItems": false
-                            },
-                            "categorySeparator": {
-                                "type": "string"
-                            },
-                            "identifier": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "uniqueItems": false
-                }
-            }
+        "simpleTypes": {
+            "enum": [
+                "array",
+                "boolean",
+                "integer",
+                "null",
+                "number",
+                "object",
+                "string"
+            ]
+        },
+        "stringArray": {
+            "type": "array",
+            "items": { "type": "string" },
+            "uniqueItems": true,
+            "default": []
         }
-    }
+    },
+    "type": ["object", "boolean"],
+    "properties": {
+        "$id": {
+            "type": "string",
+            "format": "uri-reference"
+        },
+        "$schema": {
+            "type": "string",
+            "format": "uri"
+        },
+        "$ref": {
+            "type": "string",
+            "format": "uri-reference"
+        },
+        "$comment": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "default": true,
+        "readOnly": {
+            "type": "boolean",
+            "default": false
+        },
+        "examples": {
+            "type": "array",
+            "items": true
+        },
+        "multipleOf": {
+            "type": "number",
+            "exclusiveMinimum": 0
+        },
+        "maximum": {
+            "type": "number"
+        },
+        "exclusiveMaximum": {
+            "type": "number"
+        },
+        "minimum": {
+            "type": "number"
+        },
+        "exclusiveMinimum": {
+            "type": "number"
+        },
+        "maxLength": { "$ref": "#/definitions/nonNegativeInteger" },
+        "minLength": { "$ref": "#/definitions/nonNegativeIntegerDefault0" },
+        "pattern": {
+            "type": "string",
+            "format": "regex"
+        },
+        "additionalItems": { "$ref": "#" },
+        "items": {
+            "anyOf": [
+                { "$ref": "#" },
+                { "$ref": "#/definitions/schemaArray" }
+            ],
+            "default": true
+        },
+        "maxItems": { "$ref": "#/definitions/nonNegativeInteger" },
+        "minItems": { "$ref": "#/definitions/nonNegativeIntegerDefault0" },
+        "uniqueItems": {
+            "type": "boolean",
+            "default": false
+        },
+        "contains": { "$ref": "#" },
+        "maxProperties": { "$ref": "#/definitions/nonNegativeInteger" },
+        "minProperties": { "$ref": "#/definitions/nonNegativeIntegerDefault0" },
+        "required": { "$ref": "#/definitions/stringArray" },
+        "additionalProperties": { "$ref": "#" },
+        "definitions": {
+            "type": "object",
+            "additionalProperties": { "$ref": "#" },
+            "default": {}
+        },
+        "properties": {
+            "type": "object",
+            "additionalProperties": { "$ref": "#" },
+            "default": {}
+        },
+        "patternProperties": {
+            "type": "object",
+            "additionalProperties": { "$ref": "#" },
+            "propertyNames": { "format": "regex" },
+            "default": {}
+        },
+        "dependencies": {
+            "type": "object",
+            "additionalProperties": {
+                "anyOf": [
+                    { "$ref": "#" },
+                    { "$ref": "#/definitions/stringArray" }
+                ]
+            }
+        },
+        "propertyNames": { "$ref": "#" },
+        "const": true,
+        "enum": {
+            "type": "array",
+            "items": true,
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "type": {
+            "anyOf": [
+                { "$ref": "#/definitions/simpleTypes" },
+                {
+                    "type": "array",
+                    "items": { "$ref": "#/definitions/simpleTypes" },
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "format": { "type": "string" },
+        "contentMediaType": { "type": "string" },
+        "contentEncoding": { "type": "string" },
+        "if": {"$ref": "#"},
+        "then": {"$ref": "#"},
+        "else": {"$ref": "#"},
+        "allOf": { "$ref": "#/definitions/schemaArray" },
+        "anyOf": { "$ref": "#/definitions/schemaArray" },
+        "oneOf": { "$ref": "#/definitions/schemaArray" },
+        "not": { "$ref": "#" }
+    },
+    "default": true
 }
