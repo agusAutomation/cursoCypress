@@ -8,7 +8,8 @@
     "cy:run": "npx cypress run -s cypress/integration/*/*.spec.js",
     "cy:open:test:desktop": "npx cypress open -e baseUrl=https://automationteststore.com/,grepTags=regression",
     "cy:open:test:mobile": "npx cypress open -e baseUrl=https://automationteststore.com/ -c viewportWidth=375,viewportHeight=667,userAgent=\"Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X)\" -s cypress/integration/regression/*.spec.js",
-    "cy:run:test:desktop": "npx cypress run -e baseUrl=https://automationteststore.com/ -s cypress/integration/regression/*.spec.js"
+    "cy:run:test:desktop": "npx cypress run -e baseUrl=https://automationteststore.com/ -s cypress/integration/regression/*.spec.js",
+    "cy:open:test:desktop:generate:baseImage": "npx cypress open -e baseUrl=https://automationteststore.com/,grepTags=regression --env updateSnapshots=true"
   },
   "keywords": [
     "cypress",
@@ -21,7 +22,8 @@
     "ajv": "^6.12.6",
     "cypress": "^9.6.1",
     "cypress-grep": "^1.0.0",
-    "cypress-mochawesome-reporter": "^3.1.0"
+    "cypress-mochawesome-reporter": "^3.1.0",
+    "cypress-real-events": "^1.7.0"
   },
   "devDependencies": {
     "cypress-image-snapshot": "^4.0.1"

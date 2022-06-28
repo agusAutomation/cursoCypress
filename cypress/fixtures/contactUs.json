@@ -1,0 +1,17 @@
+[
+    {
+        "firstName": "Anastasia",
+        "email": "unEjemplo@email.com",
+        "message": "Example 1!"
+    },
+    {
+        "firstName": "Edmundo",
+        "email": "unEjemplo2@email.com",
+        "message": "Example 2! Guau! se autocompleta"
+    },
+    {
+        "firstName": "Eduardo",
+        "email": "unEjemplo@email.com",
+        "message": "Example 3! Que test más copado!"
+    }
+]  

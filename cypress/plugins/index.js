@@ -15,9 +15,13 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-// eslint-disable-next-line no-unused-vars
+const {
+  addMatchImageSnapshotPlugin,
+} = require("cypress-image-snapshot/plugin");
+
 module.exports = (on, config) => {
   // optional: register cypress-grep plugin code
-  require('cypress-grep/src/plugin')(config);
-  require('cypress-mochawesome-reporter/plugin')(on)
-}
+  require("cypress-grep/src/plugin")(config);
+  require("cypress-mochawesome-reporter/plugin")(on);
+  addMatchImageSnapshotPlugin(on, config);
+};
